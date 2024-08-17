@@ -11,6 +11,7 @@ const RegisterPage = () => {
     username: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
@@ -28,8 +29,11 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { username, email, password } = formData;
-    console.log(username, email, password);
+    const { username, email, password, confirmPassword } = formData;
+    console.log(username, email, password, confirmPassword);
+    if(password !== confirmPassword) {
+      return toast.error("As senhas precisam ser iguais");
+    }
 
     try {
       const response = await fetch(`${BASE_URL}/users`, {
@@ -62,6 +66,7 @@ const RegisterPage = () => {
       username: "",
       email: "",
       password: "",
+      confirmPassword: "",
     });
   };
 
@@ -100,6 +105,17 @@ const RegisterPage = () => {
           id="password"
           name="password"
           value={formData.password}
+          onChange={handleChange}
+          required
+          maxLength={50}
+        />
+
+       <label htmlFor="email">Confirme sua senha:</label>
+        <input
+          type="password"
+          id="password"
+          name="confirmPassword"
+          value={formData.confirmPassword}
           onChange={handleChange}
           required
           maxLength={50}

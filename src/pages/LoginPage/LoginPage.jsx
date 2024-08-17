@@ -4,12 +4,15 @@ import { toast } from "react-toastify";
 import styles from "./LoginPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../Constant/Constant";
+import { IoEyeSharp } from "react-icons/io5";
+import { PiEyeSlashLight } from "react-icons/pi";
 const LoginPage = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
+  const [showPassword, setShowPassword] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -86,8 +89,9 @@ const LoginPage = () => {
         />
 
         <label htmlFor="email">Senha:</label>
+        <div className="icon-div">
         <input
-          type="password"
+          type={showPassword ? "text" : "password"}
           id="password"
           name="password"
           value={formData.password}
@@ -95,7 +99,22 @@ const LoginPage = () => {
           required
           maxLength={50}
         />
+        {
+        showPassword 
+        ? 
+        <div>
+        <IoEyeSharp size={20} className={styles.icon} onClick={() => setShowPassword(!showPassword)} /> 
+          Esconder
+        </div>
+        :
+        <div>
+        <PiEyeSlashLight size={20} className={styles.icon} onClick={() => setShowPassword(!showPassword)}/>
+          Mostrar
+        </div>
 
+        }
+        </div>
+        
         <button type="submit" className={styles.send_btn}>
           Entrar
         </button>
