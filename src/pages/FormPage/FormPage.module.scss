@@ -1,0 +1,99 @@
+.form {
+  .form_container {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    min-width: fit-content;
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+
+  .form_group {
+    text-align: center;
+  }
+
+  .send_btn {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #710d03;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+    transition: all 250ms;
+    width: auto;
+    display: block;
+    margin: 30px auto;
+  }
+
+  .send_btn:hover,
+  .send_btn:focus {
+    background-color: #fb8332;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+
+  .send_btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .send_btn:active {
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    transform: translateY(0);
+  }
+
+  /* form input styles */
+  label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  select {
+    min-width: fit-content;
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  select:hover,
+  select:focus {
+    border-color: #888;
+  }
+
+  .curriculo_label {
+    margin-top: 30px;
+  }
+}

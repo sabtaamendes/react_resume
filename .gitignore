@@ -1,0 +1,134 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore build output
+build/
+dist/
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Ignore test coverage reports
+coverage/
+
+# Ignore bundled files
+*.gz.js
+*.br.js
+
+# Ignore misc files
+*.log
+*.out
+*.lock
+*.key
+*.pem
+*.crt
+*.csr
+*.srl
+*.jks
+*.keystore
+*.jks.bak
+*.cer
+*.crt.bak
+*.cer.bak
+*.pem.bak
+*.pfx
+*.p12
+*.p12.bak
+*.pfx.bak
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore misc files
+*.log
+*.out
+*.lock
+*.key
+*.pem
+*.crt
+*.csr
+*.srl
+*.jks
+*.keystore
+*.jks.bak
+*.cer
+*.crt.bak
+*.cer.bak
+*.pem.bak
+*.pfx
+*.p12
+*.p12.bak
+*.pfx.bak
+
+# Ignore build output
+build/
+dist/
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Ignore test coverage reports
+coverage/
+
+# Ignore bundled files
+*.gz.js
+*.br.js
+
+# Ignore misc files
+*.log
+*.out
+*.lock
+*.key
+*.pem
+*.crt
+*.csr
+*.srl
+*.jks
+*.keystore
+*.jks.bak
+*.cer
+*.crt.bak
+*.cer.bak
+*.pem.bak
+*.pfx
+*.p12
+*.p12.bak
+*.pfx.bak

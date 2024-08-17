@@ -1,0 +1,87 @@
+.table {
+  /* Basic table styling */
+  .table_container {
+    margin: 0 auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  table th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+  }
+
+  table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row background color */
+  }
+
+  table tbody tr:hover {
+    background-color: #e0e0e0; /* Hover color */
+  }
+
+  @media (max-width: 768px) {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: left;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+
+      table th {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
+  .btn_table {
+    background-color: #800000;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .btn_table:hover,
+  .btn_table:hover {
+    background-color: #d70909;
+  }
+
+  .buttons_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    gap: 15px;
+  }
+}
