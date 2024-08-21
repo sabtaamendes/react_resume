@@ -71,6 +71,7 @@
     margin-bottom: 8px;
     display: block;
   }
+
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -94,5 +95,15 @@
     font-size: 16px;
   }
 
+  .password_container {
+    position: relative;
+  }
 
+  .password_container img {
+    position: absolute;
+    right: 8%;
+    top: 8.8%;
+    cursor: pointer;
+    width: 20px;
+  }
 }

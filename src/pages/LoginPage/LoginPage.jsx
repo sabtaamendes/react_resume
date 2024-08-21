@@ -4,15 +4,13 @@ import { toast } from "react-toastify";
 import styles from "./LoginPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../Constant/Constant";
-import { IoEyeSharp } from "react-icons/io5";
-import { PiEyeSlashLight } from "react-icons/pi";
 const LoginPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  const [showPassword, setShowPassword] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -23,6 +21,9 @@ const LoginPage = () => {
     }));
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -37,16 +38,15 @@ const LoginPage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
-      
       }).then((response) => response.json());
-      
+
       if (response) {
         toast.success("Login realizado!");
         // console.log("response:", response);
-    
+
         //store token in localStorage
         localStorage.setItem("token", response.token);
-        
+
         //redirect to all candidates page after loggin in
         navigate("/resumes");
       }
@@ -89,32 +89,33 @@ const LoginPage = () => {
         />
 
         <label htmlFor="email">Senha:</label>
-        <div className="icon-div">
-        <input
-          type={showPassword ? "text" : "password"}
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          maxLength={50}
-        />
-        {
-        showPassword 
-        ? 
-        <div>
-        <IoEyeSharp size={20} className={styles.icon} onClick={() => setShowPassword(!showPassword)} /> 
-          Esconder
-        </div>
-        :
-        <div>
-        <PiEyeSlashLight size={20} className={styles.icon} onClick={() => setShowPassword(!showPassword)}/>
-          Mostrar
+        <div className={styles.password_container}>
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            maxLength={50}
+          />
+          {showPassword ? (
+            <img
+              onClick={toggleShowPassword}
+              className="icon_eye"
+              src="/src/assets/images/visibility_.svg"
+              alt="open eye icon"
+            />
+          ) : (
+            <img
+              onClick={toggleShowPassword}
+              className="icon_eye"
+              src="/src/assets/images/visibility_off_.svg"
+              alt="closed eye icon"
+            />
+          )}
         </div>
 
-        }
-        </div>
-        
         <button type="submit" className={styles.send_btn}>
           Entrar
         </button>
